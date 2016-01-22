@@ -13,7 +13,7 @@ resource "aws_instance" "training" {
     }
 }
 resource "aws_security_group" "training" {
-    name = "${concat("sg",var.project)}"
+    name = "${concat("sg-",var.project)}"
     description = "Training traffic"
 
     ingress {

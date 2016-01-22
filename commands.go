@@ -14,6 +14,7 @@ var commandSetup = cli.Command{
 	Name:        "setup",
 	Usage:       "Setup training images on the specified cloud provider",
 	Description: "Setup training images on the specified cloud provider.",
+	Action:      doSetup,
 	Flags: []cli.Flag{
 		cli.StringFlag{
 			Name:  "label, l",
@@ -24,7 +25,7 @@ var commandSetup = cli.Command{
 			Usage: "The number of instances to create.",
 		},
 		cli.StringFlag{
-			Name: "provider, p",
+			Name:  "provider, p",
 			Usage: "The cloud provider to use.",
 		},
 	},
@@ -34,4 +35,7 @@ var commandList = cli.Command{
 	Name:        "list",
 	Usage:       "List created instances",
 	Description: "Show a list of ip addresses of the created instances.",
+}
+
+func doSetup(c *cli.Context) {
 }
