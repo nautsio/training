@@ -1,5 +1,3 @@
-variable "access_key" {}
-variable "secret_key" {}
 variable "project" {}
 variable "region" {}
 variable "key_name" {}
