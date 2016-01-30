@@ -1,23 +1,22 @@
 package main
 
 import (
-	"github.com/codegangsta/cli"
-	"fmt"
+	"log"
 	"os"
 	"os/exec"
+
+	"github.com/codegangsta/cli"
 )
 
 func main() {
-	_, err := exec.LookPath("terraform")
-	if err != nil {
-		fmt.Println("FATAL - Terraform not found")
-		os.Exit(1)
+	if _, err := exec.LookPath("terraform"); err != nil {
+		log.Fatal("[ERROR] Terraform not found")
 	}
 
 	app := cli.NewApp()
 	app.Name = "training"
 	app.Version = Version
-	app.Usage = "Create training images."
+	app.Usage = "Create training environments."
 	app.Author = "nauts.io"
 	app.Commands = Commands
 
