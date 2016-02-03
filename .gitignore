@@ -1,4 +1,6 @@
 *.tfvars
 *.tfstate
 *.backup
-training
+bin/
+pkg/
+vendor/src/
